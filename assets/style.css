@@ -7,17 +7,23 @@
     --card-bg: rgb(46, 31, 46);
     --border-color: rgb(51, 51, 51);
     --transition: all .3s ease;
+    --border-width: 40px;
 }
 
-* {
-    padding: 0;
+*, *::after, *::before:not(i){
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
     scrollbar-color: var(--primary-color) var(--dark-bg);
+
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -25,6 +31,19 @@ body {
     background-color: var(--dark-bg);
     color: var(--light-text);
     line-height: 1.6;
+}
+
+.boxEffect{
+    content: "";
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: calc(100vw - var(--border-width) * 2 - 15px);
+    height: calc(100vh - var(--border-width) * 2);
+    border: var(--border-width) solid rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    pointer-events: none;
 }
 
 a {
@@ -44,7 +63,7 @@ img {
 
 header {
     position: fixed;
-    top: 0;
+    top: var(--border-width);
     left: 0;
     width: 100%;
     background-color: rgba(10, 10, 10, 0.9);
@@ -53,13 +72,19 @@ header {
     border-bottom: 1px solid var(--border-color);
 }
 
-#navbar {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    max-width: 1400px;
     margin: 0 auto;
+    width: calc(100vw - var(--border-width) * 5);
+}
+
+#themeButton{
+    height: 30px;
+    aspect-ratio: 1;
+    cursor: pointer;
 }
 
 .navLinks {
@@ -96,6 +121,8 @@ section {
     padding: 6rem 5%;
     max-width: 1400px;
     margin: 0 auto;
+    min-height: calc(100vw - var(--border-width) * 5);
+    width: calc(100vw - var(--border-width) * 5);
 }
 
 .sectionTitle {
@@ -139,6 +166,7 @@ section {
     display: flex;
     align-items: center;
     padding-top: 5rem;
+    gap: 20px;
 }
 
 .aboutMeContent {
@@ -146,6 +174,7 @@ section {
     justify-content: space-between;
     align-items: center;
     gap: 4rem;
+    width: 66%;
 }
 
 .aboutMeText {
@@ -197,7 +226,7 @@ section {
 }
 
 .aboutMeImg {
-    flex: 1;
+    width: 34%;
     display: flex;
     justify-content: flex-end;
 }
@@ -205,13 +234,24 @@ section {
 .aboutMeImg img {
     width: 350px;
     height: 350px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--primary-color);
     box-shadow: 0 0 25px rgba(180, 99, 255, .55);
+    image-rendering: pixelated;
 }
 
 .aboutMeImg img:hover {
     transform: scale(1.03);
     box-shadow: 0 0 30px rgba(108, 99, 255, .5);
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    resize: vertical;
 }
