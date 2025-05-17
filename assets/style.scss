@@ -1,0 +1,342 @@
+:root {
+    --primary-color: rgb(66, 20, 75);
+    --dark-bg: black;
+    --dark-text: white;
+
+    --light-bg: white;
+    --light-text: black;
+    --gray-text: rgb(99, 99, 99);
+    --card-bg: red;
+    --border-color: rgb(51, 51, 51);
+    --transition: all .3s ease;
+    --border-width: 40px;
+}
+
+*,
+*::after,
+*::before:not(i) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--light-text);
+
+    html::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.boxEffect {
+    content: "";
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: calc(100vw - var(--border-width) * 2 - 15px);
+    height: calc(100vh - var(--border-width) * 2);
+    border: var(--border-width) solid rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    z-index: 999;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+header {
+    position: fixed;
+    top: var(--border-width);
+    left: var(--border-width);
+    width: 100%;
+    background-color: var(--dark-bg);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    width: calc(100vw - var(--border-width) * 5);
+    margin: 0 auto;
+
+    .navLinks {
+        display: flex;
+        gap: 2rem;
+
+        a {
+            position: relative;
+            padding: .5rem 0;
+            transition: var(--transition);
+        }
+
+        a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        a:hover:after {
+            width: 100%;
+        }
+    }
+}
+
+.themeButton {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+
+    cursor: pointer;
+    background-color: blue;
+}
+
+
+section {
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vw - var(--border-width) * 5);
+    width: calc(100vw - var(--border-width) * 5);
+
+
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .sectionTitle:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--primary-color);
+    }
+}
+
+.aboutMe {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    gap: 20px;
+
+    .aboutMeContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
+        width: 66%;
+    }
+
+    .aboutMeText {
+        flex: 1;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: .5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-text);
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+    }
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--card-bg);
+        color: var(--light-text);
+        transition: var(--transition);
+        font-size: 1.2rem;
+
+        &:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+    }
+}
+
+.aboutMeImg {
+    display: flex;
+    justify-content: flex-end;
+    width: 350px;
+    height: 350px;
+    ;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
+        border: 5px solid var(--primary-color);
+        box-shadow: 0 0 25px rgba(180, 99, 255, .55);
+
+        &:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(108, 99, 255, .5);
+        }
+    }
+}
+
+.contactButton {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: .8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100%;
+        width: 50%;
+
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .formButton {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        padding: .8rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+    }
+}
+
+.projectsContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+
+    .projectCard {
+        border-radius: 10px;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        border: 2px solid red;
+        object-fit: contain;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+        &:nth-child(1) {
+            z-index: 1;
+        }
+
+        &:nth-child(2) {
+            z-index: 2;
+        }
+
+        &:nth-child(3) {
+            z-index: 3;
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: contain;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

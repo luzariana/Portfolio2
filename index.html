@@ -11,9 +11,20 @@
 </head>
 
 <body>
+    <div class="boxEffect"></div>
+    <div class="mainContainer">
+
+    </div>
     <header>
-        <nav>
-            <button id="themeButton"></button>
+        <nav id="navBar" class="navBar">
+            <div class="themeButtonContainer" id="themeButtonContainer">
+                <div id="themeButton" class="themeButton">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+            </div>
+
+
             <ul class="navLinks">
                 <li> <a href="#aboutMe">ABOUT ME</a></li>
                 <li> <a href="#projects">PROJECTS</a></li>
@@ -23,22 +34,30 @@
             </ul>
         </nav>
 
+
+
     </header>
     <main>
+
         <section id="aboutMe" class="aboutMe">
-            <div class="aboutMecontent">
+            <div class="aboutMeContent">
                 <div class="aboutMeText">
                     <h1 class="sectionTitle">Luz Ariana Montes</h1>
                     <h3>ABOUT ME</h3>
                     <p>Breve descripcion... Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quia nisi
-                        provident. Natus, possimus assumenda rem magni temporibus autem voluptatibus nulla dolor vitae
+                        provident. Natus, possimus assumenda rem magni temporibus autem voluptatibus nulla dolor
+                        vitae
                         quidem, dolores fugiat! Alias, itaque ut? Dignissimos?
                     </p>
                     <div class="socialLinks">
                         <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-mail"></i></a>
+                        <a href="#" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                        <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i></a>
+                    </div>
+                    <div class="contactButton">
+                        <a href="#contact">CONTACT</a>
                     </div>
                 </div>
             </div>
@@ -48,85 +67,79 @@
         </section>
         <section id="projects" class="projects">
             <h2 class="sectionTitle">PROJECTS</h2>
-            <div class="projectContainer">
-                <div id="projectCard" class="projectCard">
+            <div class="projectsContainer">
+
+                <div class="projectCard" id="projectCard1">
+                    <h3>Project 1 name</h3>
                     <div class="projectImg">
-                        <img src="" alt="">
-                    </div>
-                </div>
-                <div id="projectCard" class="projectCard">
-                    <div class="projectImg">
-                        <img src="" alt="">
-                    </div>
-                </div>
-                <div id="projectCard" class="projectCard">
-                    <div class="projectImg">
-                        <img src="" alt="">
-                    </div>
-                    <div class="projectInfo">
-                        <h3>Project 1 name</h3>
+                        <!-- <img src="./assets/download.jpg" alt=""> -->
                         <p>Descripción de la app</p>
                         <div class="projectTech">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
-                        </div>
-                        <div class="projectLinks">
-                            <a href="#" target="_blank"><i class="fas fa-link"></i>Demo</a>
-                            <a href="#" target="_blank"><i class="fas fa-github"></i>Repositorio</a>
+                            <div class="projectLinks">
+                                <a href="#" target="_blank"><i class="fas fa-link"></i>Demo</a>
+                                <a href="#" target="_blank"><i class="fas fa-github"></i>Repositorio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="projectCard" class="projectCard">
+
+                <div class="projectCard" id="projectCard2">
+                    <h3>Project 2 name</h3>
                     <div class="projectImg">
-                        <img src="" alt="">
-                    </div>
-                    <div class="projectInfo">
-                        <h3>Project 2 name</h3>
+                        <!-- <img src="./assets/download.jpg" alt=""> -->
                         <p>Descripción de la app</p>
                         <div class="projectTech">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
-                        </div>
-                        <div class="projectLinks">
-                            <a href="#" target="_blank"><i class="fas fa-link"></i>Demo</a>
-                            <a href="#" target="_blank"><i class="fas fa-github"></i>Repositorio</a>
+                            <div class="projectLinks">
+                                <a href="#" target="_blank"><i class="fas fa-link"></i>Demo</a>
+                                <a href="#" target="_blank"><i class="fas fa-github"></i>Repositorio</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="projectCard" class="projectCard">
+
+                <div class="projectCard" id="projectCard3">
+                    <h3>Project 3 name</h3>
                     <div class="projectImg">
-                        <img src="" alt="">
-                    </div>
-                    <div class="projectInfo">
-                        <h3>Project 3 name</h3>
+                        <!-- <img src="./assets/download.jpg" alt=""> -->
                         <p>Descripción de la app</p>
                         <div class="projectTech">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
-                        </div>
-                        <div class="projectLinks">
-                            <a href="#" target="_blank"><i class="fas fa-link"></i>Demo</a>
-                            <a href="#" target="_blank"><i class="fas fa-github"></i>Repositorio</a>
+                            <div class="projectLinks">
+                                <a href="#" target="_blank"><i class="fas fa-link"></i>Demo</a>
+                                <a href="#" target="_blank"><i class="fas fa-github"></i>Repositorio</a>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="cardsSelector">
+
                 </div>
             </div>
         </section>
+
         <section id="skills">
             <h2 class="sectionTitle">SKILLS</h2>
         </section>
-        <section id="contact">
+        <section id="contact" class="contact">
             <h2 class="sectionTitle">CONTACT</h2>
-            <form action="">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-                <button class="btn">SEND</button>
+            <form class="form" action="">
+                <label for="name">Name</label>
+                <input type="text" required id="name" name="name" placeholder="NAME">
+                <label for="lastname">Lastname</label>
+                <input type="text" name="lastname" id="lastname" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="button" class="formButton">SEND</button>
             </form>
         </section>
     </main>
@@ -136,7 +149,10 @@
             <div class="socialLinks">
                 <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#" target="_blank"><i class="fa-regular fa-file-pdf"></i></a>
+
             </div>
         </div>
     </footer>
